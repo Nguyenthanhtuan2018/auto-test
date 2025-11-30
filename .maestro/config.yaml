@@ -1,3 +1,5 @@
 flows:
-  - "auth/*.yaml"
-  - "home/*.yaml"
+  - "base/*.yaml"
+  - "fragments/*.yaml"
+  - "tests/*.yaml"
+  - "smoke/*.yaml"

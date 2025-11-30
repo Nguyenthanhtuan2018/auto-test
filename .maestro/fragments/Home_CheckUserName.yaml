@@ -1,0 +1,9 @@
+appId: ${APP_ID}
+tags:
+  - fragment
+  - home
+---
+# Giả định đang ở Trang chủ
+- assertVisible: "Trang chủ"
+# Tên user lấy từ API (apiLogin.js → output.user.displayRegex)
+- assertVisible: ${output.user.displayRegex}

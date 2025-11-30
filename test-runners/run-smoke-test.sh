@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Load environment variables
-source env/env.common
-source env/env.stg
-source env/flow.login
+# Load environment variables (new structure)
+source <(grep -v '^#' env/env.common | sed 's/-e /export /')
+source <(grep -v '^#' env/env.stg | sed 's/-e /export /')
+source <(grep -v '^#' env/scenario.smoke.stg | sed 's/-e /export /')
 
 # Run smoke test with HTML report
 ./maestro/maestro/bin/maestro test .maestro \

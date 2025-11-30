@@ -1,0 +1,21 @@
+appId: ${APP_ID}
+jsEngine: graaljs
+tags:
+  - smokeTest
+---
+# 1) Gọi API login để lấy tên user trước
+- runScript:
+    file: ../../scripts/apiLogin.js
+    env:
+      loginUrl: "${API_BASE_URL}${LOGIN_PATH}"
+      mobile: ${LOGIN_MOBILE}
+      deviceId: ${LOGIN_DEVICE_ID}
+      password: ${LOGIN_PASSWORD}
+
+# 2) Login app từ đầu (1 lần)
+- runFlow:
+    file: ../base/Login.yaml
+
+# 3) Check Trang chủ + tên user
+- runFlow:
+    file: ../fragments/Home_CheckUserName.yaml
