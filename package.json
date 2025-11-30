@@ -1,0 +1,22 @@
+{
+  "name": "taptap-qa-automation",
+  "version": "1.0.0",
+  "description": "QA Automation Test cho app Android TAPTAP với Maestro",
+  "scripts": {
+    "test:login:stg": "maestro test .maestro/auth/Login.yaml @env/env.common @env/env.stg @env/flow.login",
+    "test:home:stg": "maestro test .maestro/home/Home.yaml @env/env.common @env/env.stg @env/flow.home",
+    "test:smoke:stg": "maestro test .maestro --includeTags smokeTest @env/env.common @env/env.stg @env/flow.login @env/flow.home",
+    "test:login:prod": "maestro test .maestro/auth/Login.yaml @env/env.common @env/env.prod @env/flow.login",
+    "test:home:prod": "maestro test .maestro/home/Home.yaml @env/env.common @env/env.prod @env/flow.home",
+    "test:smoke:prod": "maestro test .maestro --includeTags smokeTest @env/env.common @env/env.prod @env/flow.login @env/flow.home"
+  },
+  "keywords": [
+    "maestro",
+    "qa",
+    "automation",
+    "android",
+    "testing"
+  ],
+  "author": "QA Team",
+  "license": "ISC"
+}

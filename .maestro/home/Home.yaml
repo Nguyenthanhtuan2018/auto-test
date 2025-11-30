@@ -1,0 +1,17 @@
+appId: ${APP_ID}
+jsEngine: graaljs
+tags:
+  - smokeTest
+  - home
+onFlowStart:
+  - runScript:
+      file: ../../scripts/apiLogin.js
+      env:
+        loginUrl: "${API_BASE_URL}${LOGIN_PATH}"
+        mobile: ${LOGIN_MOBILE}
+        deviceId: ${LOGIN_DEVICE_ID}
+        password: ${LOGIN_PASSWORD}
+---
+- runFlow:
+    file: ../auth/Login.yaml
+- assertVisible: ${output.user.displayRegex}

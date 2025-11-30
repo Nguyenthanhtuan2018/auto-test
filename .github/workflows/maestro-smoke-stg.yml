@@ -1,0 +1,43 @@
+name: Maestro Smoke STG (QA repo, dùng APK Staging)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  smoke-stg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      
+      - name: Install Maestro CLI
+        run: |
+          curl -fsSL "https://get.maestro.mobile.dev" | bash
+          echo "$HOME/.maestro/bin" >> $GITHUB_PATH
+      
+      - name: Run Maestro Smoke Test on Android Emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 33
+          arch: x86_64
+          profile: pixel_7
+          script: |
+            adb install apk/taptap-stg.apk
+            chmod +x test-runners/run-smoke-test.sh
+            bash test-runners/run-smoke-test.sh
+      
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-test-report
+          path: reports/smoke-test-report.html

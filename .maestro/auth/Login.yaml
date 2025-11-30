@@ -1,0 +1,13 @@
+appId: ${APP_ID}
+tags:
+  - auth
+---
+- launchApp
+- eraseText
+- inputText: ${LOGIN_PHONE}
+- tapOn: "Tiếp tục"
+- inputText: ${LOGIN_PASSWORD}
+- tapOn:
+    text: "Đóng"
+    optional: true
+- assertVisible: "Trang chủ"

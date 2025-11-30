@@ -1,0 +1,18 @@
+# APK files
+apk/*.apk
+
+# Node modules
+node_modules/
+
+# Maestro debug output (keep only reports folder)
+.maestro/tests/
+*.html
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
