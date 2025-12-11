@@ -1,0 +1,16 @@
+appId: ${APP_ID}
+tags:
+  - fragment
+  - reward_purchase
+---
+# Đang ở Trang chủ
+- assertVisible: "Trang chủ"
+
+# Mở tab Đổi thưởng
+- tapOn: "Đổi thưởng"
+
+# Đã vào màn Đổi thưởng
+- assertVisible: "Đổi thưởng"
+
+# Trong collection list có collection AT2025
+- assertVisible: ${PURCHASE_COLLECTION_NAME}

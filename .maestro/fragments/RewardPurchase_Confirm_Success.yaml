@@ -1,0 +1,11 @@
+appId: ${APP_ID}
+tags:
+  - fragment
+  - reward_purchase
+---
+# Đang ở màn chi tiết reward
+- tapOn: "Đổi ngay"
+- tapOn: "Xác nhận"
+
+# Thông báo purchase thành công (mua reward bằng point)
+- assertVisible: "Đã đổi thành công"

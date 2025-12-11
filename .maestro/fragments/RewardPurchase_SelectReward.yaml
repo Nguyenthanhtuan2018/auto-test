@@ -1,0 +1,11 @@
+appId: ${APP_ID}
+tags:
+  - fragment
+  - reward_purchase
+---
+# Đang ở trong collection AT2025, list reward đã hiện
+# Chọn reward có tên "Reward AT2025"
+- tapOn: ${PURCHASE_REWARD_NAME}
+
+# Vào màn chi tiết reward, có nút Đổi ngay
+- assertVisible: "Đổi ngay"

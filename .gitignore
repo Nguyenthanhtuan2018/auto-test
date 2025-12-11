@@ -1,5 +1,5 @@
-# APK files (comment out to commit APK for CI)
-# apk/*.apk
+# APK files (too large for GitHub, download in CI instead)
+apk/*.apk
 
 # Node modules
 node_modules/
