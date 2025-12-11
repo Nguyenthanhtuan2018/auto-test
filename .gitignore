@@ -5,7 +5,6 @@ apk/*.apk
 node_modules/
 
 # Maestro debug output (keep only reports folder)
-.maestro/tests/
 *.html
 
 # IDE

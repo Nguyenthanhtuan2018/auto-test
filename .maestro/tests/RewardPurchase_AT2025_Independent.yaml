@@ -1,0 +1,25 @@
+appId: ${APP_ID}
+jsEngine: graaljs
+tags:
+  - regression
+  - reward_purchase
+---
+# 1) Login từ đầu
+- runFlow:
+    file: ../base/Login.yaml
+
+# 2) Trang chủ -> tab Đổi thưởng, thấy collection AT2025
+- runFlow:
+    file: ../fragments/RewardPurchase_OpenTab.yaml
+
+# 3) Chọn collection AT2025, thấy reward "Reward AT2025"
+- runFlow:
+    file: ../fragments/RewardPurchase_SelectCollection.yaml
+
+# 4) Chọn reward "Reward AT2025"
+- runFlow:
+    file: ../fragments/RewardPurchase_SelectReward.yaml
+
+# 5) Purchase reward bằng point & check "Đã đổi thành công"
+- runFlow:
+    file: ../fragments/RewardPurchase_Confirm_Success.yaml
