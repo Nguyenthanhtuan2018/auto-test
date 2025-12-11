@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Running Regression Test - Purchase Reward..."
 
-./maestro/maestro/bin/maestro test .maestro/tests/RewardPurchase_AT2025_Independent.yaml --format HTML --output reports/regression-test-report.html @env/env.common @env/env.stg @env/scenario.regression.stg
+./maestro/maestro/bin/maestro test .maestro/regression/RewardPurchase_AT2025_Independent.yaml --format HTML --output reports/regression-test-report.html @env/env.common @env/env.stg @env/scenario.regression.stg
 
 if [ -f "reports/regression-test-report.html" ]; then
     echo "Test completed! Opening report..."

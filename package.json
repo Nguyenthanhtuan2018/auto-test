@@ -5,7 +5,7 @@
   "scripts": {
     "//": "=== Chạy test trên STG theo TAG ===",
     "test:smoke:stg": ".\\maestro\\maestro\\bin\\maestro test .maestro --include-tags smokeTest @env/env.common @env/env.stg @env/scenario.smoke.stg",
-    "test:regression:stg": ".\\maestro\\maestro\\bin\\maestro test .maestro --include-tags regression @env/env.common @env/env.stg @env/scenario.regression.stg",
+    "test:regression:stg": ".\\maestro\\maestro\\bin\\maestro test .maestro\\regression --include-tags regression @env/env.common @env/env.stg @env/scenario.regression.stg",
     "//ci": "Chạy smoke trước, pass rồi mới chạy regression (dùng cho CI hoặc local)",
     "test:ci:stg": "npm run test:smoke:stg && npm run test:regression:stg"
   },

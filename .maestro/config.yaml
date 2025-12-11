@@ -1,5 +1,5 @@
 flows:
   - "base/*.yaml"
   - "fragments/*.yaml"
-  - "tests/*.yaml"
+  - "regression/*.yaml"
   - "smoke/*.yaml"
